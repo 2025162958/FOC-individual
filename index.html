@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentals of Computing - Course</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen font-sans text-gray-200 bg-gray-900">
+
+    <!-- Header -->
+    <header class="bg-black text-red-500 text-center py-6 border-b-4 border-red-700">
+        <h1 class="text-3xl font-bold mb-1">Fundamentals of Computing</h1>
+        <p class="text-sm text-gray-300">My Computing Course Website</p>
+    </header>
+
+    <main class="flex flex-col md:flex-row flex-1">
+        
+        <!-- Sidebar Menu -->
+        <nav class="w-full md:w-[200px] bg-black border-r-2 border-red-700 py-6 shrink-0">
+            <h3 class="text-center font-bold text-lg mb-6 text-red-500">Menu</h3>
+            <ul class="flex flex-col">
+                <!-- Active page has a red background -->
+                <li><a href="index.html" class="block px-6 py-3 bg-red-700 text-white text-sm font-medium">Course</a></li>
+                <li><a href="project.html" class="block px-6 py-3 hover:bg-red-800 text-white text-sm font-medium">Project</a></li>
+                <li><a href="concepts.html" class="block px-6 py-3 hover:bg-red-800 text-white text-sm font-medium">Concepts</a></li>
+                <li><a href="databases.html" class="block px-6 py-3 hover:bg-red-800 text-white text-sm font-medium">Databases</a></li>
+                <li><a href="documentation.html" class="block px-6 py-3 hover:bg-red-800 text-white text-sm font-medium">Documentation</a></li>
+                <li><a href="devteam.html" class="block px-6 py-3 hover:bg-red-800 text-white text-sm font-medium">Dev Team</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <section class="flex-1 p-8 md:p-12 text-center max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-red-500">Welcome</h2>
+            <img src="image_4cdb9e.jpg" alt="Course Banner" class="mx-auto rounded-lg shadow-lg mb-8 max-w-md w-full object-cover border-2 border-red-700">
+            <p class="text-left text-gray-300 leading-relaxed">
+                This course is an introduction to the fundamentals of Computer Science that will provide students with a foundation for future courses in Computer Science. The course is a broad survey of the discipline through topics that allow students to understand the capabilities of computer systems in terms of computer architecture, operating systems and computer networks, software and software development, data organization and visualization, and the potential of computing machines.
+            </p>
+        </section>
+    </main>
+
+    <footer class="bg-black text-red-500 text-center py-4 text-sm mt-auto border-t-2 border-red-700">
+        @ Powered by UB
+    </footer>
+
+</body>
+</html>
