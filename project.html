@@ -27,18 +27,17 @@
     <!-- Main Content -->
     <main class="flex-1 py-12 px-6 max-w-7xl mx-auto w-full text-center">
         <h2 class="text-3xl font-bold mb-2 text-white">Interactive Projects</h2>
-        <p class="mb-10 text-gray-400 text-sm">Explore interactive computing tools, logic gate simulators, and number converters built by Group 2.</p>
+        <p class="mb-10 text-gray-400 text-xs">Explore interactive computing tools, logic gate simulators, and number converters built by Group 2.</p>
         
-        <!-- Grid Container -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
 
-            <!-- 1. Even & Odd Numbers Sum Calculator (Featured Component) -->
-            <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 shadow-xl col-span-1 md:col-span-2 lg:col-span-3">
+            <!-- 1. Even & Odd Numbers Sum Calculator -->
+            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-xl col-span-1 md:col-span-2 lg:col-span-3">
                 <div class="flex justify-between items-center mb-4">
                     <h4 class="font-bold text-lg text-white">Even & Odd Numbers Sum Calculator</h4>
-                    <span class="text-xs bg-blue-900/60 text-blue-300 px-3 py-1 rounded-full border border-blue-500/30">Dynamic Loop</span>
+                    <span class="text-xs bg-slate-900 text-blue-400 px-3 py-1 rounded border border-gray-700 font-mono">Loop Control</span>
                 </div>
-                <p class="text-xs text-gray-400 mb-4">Enter a positive integer limit ($N$) to dynamically calculate and separate the sum sequence of all even and odd numbers from $1$ to $N$.</p>
+                <p class="text-xs text-gray-400 mb-4">Enter an upper limit ($N$) to calculate and separate the sum sequence of all even and odd numbers from $1$ to $N$.</p>
                 
                 <div class="mb-6">
                     <label for="number-limit" class="block text-xs font-medium text-gray-300 mb-2">Enter Upper Limit ($N$):</label>
@@ -48,40 +47,38 @@
                         placeholder="e.g. 10" 
                         min="1" 
                         oninput="calculateSums()" 
-                        class="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition"
+                        class="w-full bg-slate-900 border border-gray-700 rounded px-4 py-3 text-white text-xs focus:outline-none focus:border-blue-500 transition"
                     >
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <!-- Even Sum Result -->
-                    <div class="bg-slate-900 p-4 rounded-lg border border-blue-500/40">
+                    <div class="bg-slate-900 p-4 rounded border border-gray-700">
                         <div class="flex justify-between items-center mb-1">
                             <span class="text-xs text-blue-400 font-bold uppercase tracking-wider">Even Sum</span>
                             <span class="text-[10px] text-gray-400 font-mono">i % 2 == 0</span>
                         </div>
-                        <div id="even-sum-result" class="text-2xl font-extrabold text-white mb-1">0</div>
+                        <div id="even-sum-result" class="text-2xl font-bold text-white mb-1">0</div>
                         <p class="text-xs text-gray-400 truncate">Sequence: <span id="even-sequence" class="text-gray-300 font-mono">-</span></p>
                     </div>
 
-                    <!-- Odd Sum Result -->
-                    <div class="bg-slate-900 p-4 rounded-lg border border-purple-500/40">
+                    <div class="bg-slate-900 p-4 rounded border border-gray-700">
                         <div class="flex justify-between items-center mb-1">
-                            <span class="text-xs text-purple-400 font-bold uppercase tracking-wider">Odd Sum</span>
+                            <span class="text-xs text-blue-400 font-bold uppercase tracking-wider">Odd Sum</span>
                             <span class="text-[10px] text-gray-400 font-mono">i % 2 != 0</span>
                         </div>
-                        <div id="odd-sum-result" class="text-2xl font-extrabold text-white mb-1">0</div>
+                        <div id="odd-sum-result" class="text-2xl font-bold text-white mb-1">0</div>
                         <p class="text-xs text-gray-400 truncate">Sequence: <span id="odd-sequence" class="text-gray-300 font-mono">-</span></p>
                     </div>
                 </div>
             </div>
 
             <!-- 2. NOT Gate Simulator -->
-            <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-xl flex flex-col justify-between">
                 <div>
                     <h4 class="font-bold text-base text-white mb-2">NOT Gate Simulator</h4>
                     <p class="text-xs text-gray-400 mb-4">Inverts the input signal ($0 \rightarrow 1$, $1 \rightarrow 0$).</p>
                 </div>
-                <div class="bg-slate-900 p-4 rounded-lg border border-gray-700 flex items-center justify-around">
+                <div class="bg-slate-900 p-4 rounded border border-gray-700 flex items-center justify-around">
                     <button onclick="toggleNot()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded transition">
                         Input: <span id="not-in" class="font-mono text-sm ml-1">0</span>
                     </button>
@@ -93,12 +90,12 @@
             </div>
 
             <!-- 3. AND Gate Simulator -->
-            <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-xl flex flex-col justify-between">
                 <div>
                     <h4 class="font-bold text-base text-white mb-2">AND Gate Simulator</h4>
                     <p class="text-xs text-gray-400 mb-4">Outputs $1$ only when both Input A and Input B are $1$.</p>
                 </div>
-                <div class="bg-slate-900 p-4 rounded-lg border border-gray-700 flex items-center justify-between gap-2">
+                <div class="bg-slate-900 p-4 rounded border border-gray-700 flex items-center justify-between gap-2">
                     <div class="flex gap-2">
                         <button onclick="toggleAnd('A')" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-3 py-2 rounded transition">
                             A: <span id="and-a" class="font-mono ml-1">0</span>
@@ -115,7 +112,7 @@
             </div>
 
             <!-- 4. Binary to Hexadecimal Converter -->
-            <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-xl flex flex-col justify-between">
                 <div>
                     <h4 class="font-bold text-base text-white mb-2">Binary to Hex Converter</h4>
                     <p class="text-xs text-gray-400 mb-3">Converts binary digits into hexadecimal base-16.</p>
@@ -126,7 +123,7 @@
                         id="bin-in" 
                         placeholder="e.g. 1010" 
                         oninput="convertBinary()" 
-                        class="w-full bg-gray-900 border border-gray-600 rounded px-3 py-2 text-white text-xs mb-3 focus:outline-none focus:border-blue-500"
+                        class="w-full bg-slate-900 border border-gray-700 rounded px-3 py-2 text-white text-xs mb-3 focus:outline-none focus:border-blue-500"
                     >
                     <div class="bg-slate-900 p-3 rounded border border-gray-700 text-xs text-gray-300">
                         Hex Result: <span id="hex-out" class="font-mono font-bold text-blue-400 ml-1">-</span>
@@ -135,7 +132,7 @@
             </div>
 
             <!-- 5. ASCII Converter -->
-            <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-xl flex flex-col justify-between">
                 <div>
                     <h4 class="font-bold text-base text-white mb-2">ASCII Character Converter</h4>
                     <p class="text-xs text-gray-400 mb-3">Converts text characters into numerical ASCII values.</p>
@@ -146,7 +143,7 @@
                         id="ascii-in" 
                         placeholder="Type text..." 
                         oninput="convertAscii()" 
-                        class="w-full bg-gray-900 border border-gray-600 rounded px-3 py-2 text-white text-xs mb-3 focus:outline-none focus:border-blue-500"
+                        class="w-full bg-slate-900 border border-gray-700 rounded px-3 py-2 text-white text-xs mb-3 focus:outline-none focus:border-blue-500"
                     >
                     <div class="bg-slate-900 p-3 rounded border border-gray-700 text-xs text-gray-300 truncate">
                         ASCII: <span id="ascii-out" class="font-mono font-bold text-blue-400 ml-1">-</span>
@@ -155,27 +152,27 @@
             </div>
 
             <!-- 6. Student 1 Overview Card -->
-            <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-xl flex flex-col justify-between">
                 <div>
                     <h4 class="font-bold text-base text-white mb-2">Student 1 Focus</h4>
                     <p class="text-xs text-gray-300 leading-relaxed">
                         Demonstrating binary notation conversions, logic gate mechanics, and real-time numerical sequence processing.
                     </p>
                 </div>
-                <div class="mt-4 pt-3 border-t border-gray-700/60 text-right">
+                <div class="mt-4 pt-3 border-t border-gray-700 text-right">
                     <span class="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Lisandro Figueroa</span>
                 </div>
             </div>
 
             <!-- 7. Student 2 Overview Card -->
-            <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-xl flex flex-col justify-between">
                 <div>
                     <h4 class="font-bold text-base text-white mb-2">Student 2 Focus</h4>
                     <p class="text-xs text-gray-300 leading-relaxed">
                         Demonstrating Hexadecimal conversions, text encoding representations (ASCII / UNICODE), and database structures.
                     </p>
                 </div>
-                <div class="mt-4 pt-3 border-t border-gray-700/60 text-right">
+                <div class="mt-4 pt-3 border-t border-gray-700 text-right">
                     <span class="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Group Partner</span>
                 </div>
             </div>
@@ -188,9 +185,8 @@
         Copyright &copy; FoC Group 2 2026.
     </footer>
 
-    <!-- Combined Interactive Logic Script -->
+    <!-- Interactive Logic Script -->
     <script>
-        // --- 1. Even & Odd Sum Calculator Logic ---
         function calculateSums() {
             let limitInput = document.getElementById('number-limit').value;
             let n = parseInt(limitInput);
@@ -229,7 +225,6 @@
             oddSequence.innerText = oddNumbers.length > 0 ? oddNumbers.join(' + ') : "-";
         }
 
-        // --- 2. NOT Gate Logic ---
         let notInput = 0;
         function toggleNot() {
             notInput = notInput === 0 ? 1 : 0;
@@ -237,7 +232,6 @@
             document.getElementById('not-out').innerText = notInput === 0 ? "1" : "0";
         }
 
-        // --- 3. AND Gate Logic ---
         let andInputA = 0;
         let andInputB = 0;
         function toggleAnd(gate) {
@@ -253,7 +247,6 @@
             document.getElementById('and-out').innerText = result;
         }
 
-        // --- 4. Binary Converter Logic ---
         function convertBinary() {
             let input = document.getElementById('bin-in').value.trim();
             let outElement = document.getElementById('hex-out');
@@ -267,7 +260,6 @@
             }
         }
 
-        // --- 5. ASCII Converter Logic ---
         function convertAscii() {
             let input = document.getElementById('ascii-in').value;
             let outElement = document.getElementById('ascii-out');
