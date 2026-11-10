@@ -3,161 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundamentals of Computing - Projects</title>
+    <title>Group 2 - Projects</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex flex-col min-h-screen font-sans text-gray-200 bg-gray-900">
+<body class="bg-slate-900 text-slate-200 min-h-screen flex flex-col font-sans">
 
-    <header class="bg-black text-red-500 text-center py-6 border-b-4 border-red-700">
-        <h1 class="text-3xl font-bold mb-1">Fundamentals of Computing</h1>
-        <p class="text-sm text-gray-300">My Computing Course Website</p>
-    </header>
-
-    <main class="flex flex-col md:flex-row flex-1">
-        
-        <nav class="w-full md:w-[200px] bg-black border-r-2 border-red-700 py-6 shrink-0">
-            <h3 class="text-center font-bold text-lg mb-6 text-red-500">Menu</h3>
-            <ul class="flex flex-col">
-                <li><a href="index.html" class="block px-6 py-3 hover:bg-red-800 text-white text-sm font-medium">Course</a></li>
-                <li><a href="project.html" class="block px-6 py-3 bg-red-700 text-white text-sm font-medium">Project</a></li>
-                <li><a href="concepts.html" class="block px-6 py-3 hover:bg-red-800 text-white text-sm font-medium">Concepts</a></li>
-                <li><a href="databases.html" class="block px-6 py-3 hover:bg-red-800 text-white text-sm font-medium">Databases</a></li>
-                <li><a href="documentation.html" class="block px-6 py-3 hover:bg-red-800 text-white text-sm font-medium">Documentation</a></li>
-                <li><a href="devteam.html" class="block px-6 py-3 hover:bg-red-800 text-white text-sm font-medium">Dev Team</a></li>
+    <!-- Header Navigation -->
+    <header class="flex justify-between items-center p-6 bg-black/80 text-white w-full">
+        <div class="text-xl font-bold tracking-widest">GROUP 2</div>
+        <nav>
+            <ul class="flex space-x-6 text-sm font-medium">
+                <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+                <li><a href="course.html" class="hover:text-blue-400">Course</a></li>
+                <li><a href="projects.html" class="text-blue-400">Project</a></li>
+                <li><a href="concepts.html" class="hover:text-blue-400">Concept</a></li>
+                <li><a href="database.html" class="hover:text-blue-400">Database</a></li>
+                <li><a href="documentation.html" class="hover:text-blue-400">Documentation</a></li>
+                <li><a href="devteam.html" class="hover:text-blue-400">Dev Team</a></li>
             </ul>
         </nav>
+    </header>
 
-        <section class="flex-1 p-8 md:p-12 text-center max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold mb-4 text-red-500">Projects</h2>
-            <p class="mb-8 text-gray-300">This section contains the projects completed for Fundamentals of Computing.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- 1. NOT Gate -->
-                <div class="bg-black border border-red-700 rounded-lg p-4 flex flex-col justify-center items-center shadow-sm">
-                    <h4 class="font-bold mb-3 text-red-500">1. NOT Gate</h4>
-                    <div class="flex items-center gap-4">
-                        <button onclick="toggleNot()" class="border border-red-500 bg-gray-800 text-white px-4 py-2 rounded hover:bg-red-900">
-                            Input: <span id="not-in" class="font-bold">0</span>
-                        </button>
-                        <span class="text-xl">→</span>
-                        <div class="px-4 py-2">
-                            Output: <span id="not-out" class="font-bold text-red-400">1</span>
+    <!-- Main Content -->
+    <main class="flex-1 py-12 px-6 max-w-7xl mx-auto w-full text-center">
+        <h2 class="text-3xl font-bold mb-2 text-white">Interactive Projects</h2>
+        <p class="mb-10 text-gray-400 text-sm">Explore interactive computing tools, logic gate simulators, and number converters built by Group 2.</p>
+        
+        <!-- Grid Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+
+            <!-- 1. Even & Odd Numbers Sum Calculator (Featured Component) -->
+            <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 shadow-xl col-span-1 md:col-span-2 lg:col-span-3">
+                <div class="flex justify-between items-center mb-4">
+                    <h4 class="font-bold text-lg text-white">Even & Odd Numbers Sum Calculator</h4>
+                    <span class="text-xs bg-blue-900/60 text-blue-300 px-3 py-1 rounded-full border border-blue-500/30">Dynamic Loop</span>
+                </div>
+                <p class="text-xs text-gray-400 mb-4">Enter a positive integer limit ($N$) to dynamically calculate and separate the sum sequence of all even and odd numbers from $1$ to $N$.</p>
+                
+                <div class="mb-6">
+                    <label for="number-limit" class="block text-xs font-medium text-gray-300 mb-2">Enter Upper Limit ($N$):</label>
+                    <input 
+                        type="number" 
+                        id="number-limit" 
+                        placeholder="e.g. 10" 
+                        min="1" 
+                        oninput="calculateSums()" 
+                        class="w-full bg-gray-900 border border-gray-600 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition"
+                    >
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Even Sum Result -->
+                    <div class="bg-slate-900 p-4 rounded-lg border border-blue-500/40">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs text-blue-400 font-bold uppercase tracking-wider">Even Sum</span>
+                            <span class="text-[10px] text-gray-400 font-mono">i % 2 == 0</span>
                         </div>
+                        <div id="even-sum-result" class="text-2xl font-extrabold text-white mb-1">0</div>
+                        <p class="text-xs text-gray-400 truncate">Sequence: <span id="even-sequence" class="text-gray-300 font-mono">-</span></p>
                     </div>
-                </div>
 
-                <!-- 2. AND Gate -->
-                <div class="bg-black border border-red-700 rounded-lg p-4 flex flex-col justify-center items-center shadow-sm">
-                    <h4 class="font-bold mb-3 text-red-500">2. AND Gate</h4>
-                    <div class="flex items-center gap-2">
-                        <button onclick="toggleAnd('A')" class="border border-red-500 bg-gray-800 text-white px-3 py-2 rounded hover:bg-red-900">
-                            A: <span id="and-a" class="font-bold">0</span>
-                        </button>
-                        <button onclick="toggleAnd('B')" class="border border-red-500 bg-gray-800 text-white px-3 py-2 rounded hover:bg-red-900">
-                            B: <span id="and-b" class="font-bold">0</span>
-                        </button>
-                        <span class="text-xl mx-2">→</span>
-                        <div class="px-2 py-2">
-                            Output: <span id="and-out" class="font-bold text-red-400">0</span>
+                    <!-- Odd Sum Result -->
+                    <div class="bg-slate-900 p-4 rounded-lg border border-purple-500/40">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs text-purple-400 font-bold uppercase tracking-wider">Odd Sum</span>
+                            <span class="text-[10px] text-gray-400 font-mono">i % 2 != 0</span>
                         </div>
+                        <div id="odd-sum-result" class="text-2xl font-extrabold text-white mb-1">0</div>
+                        <p class="text-xs text-gray-400 truncate">Sequence: <span id="odd-sequence" class="text-gray-300 font-mono">-</span></p>
                     </div>
-                </div>
-
-                <!-- 3. AND Gate Easy Version -->
-                <div class="bg-black border border-red-700 rounded-lg p-4 flex flex-col justify-center items-center shadow-sm col-span-1 md:col-span-2">
-                    <h4 class="font-bold text-red-500">3. AND Gate - Easy Version</h4>
-                </div>
-
-                <!-- 4. Binary to Hex Converter -->
-                <div class="bg-black border border-red-700 rounded-lg p-4 flex flex-col justify-center items-center shadow-sm">
-                    <h4 class="font-bold mb-3 text-red-500">4. Binary to Hexadecimal Converter</h4>
-                    <input type="text" id="bin-in" placeholder="Enter Binary (e.g. 1010)" class="border border-red-500 bg-gray-800 text-white px-3 py-2 rounded w-full max-w-xs mb-2 text-center" oninput="convertBinary()">
-                    <div>Hex: <span id="hex-out" class="font-bold text-red-400"></span></div>
-                </div>
-
-                <!-- 5. ASCII Converter -->
-                <div class="bg-black border border-red-700 rounded-lg p-4 flex flex-col justify-center items-center shadow-sm">
-                    <h4 class="font-bold mb-3 text-red-500">5. ASCII Converter</h4>
-                    <input type="text" id="ascii-in" placeholder="Enter Text" class="border border-red-500 bg-gray-800 text-white px-3 py-2 rounded w-full max-w-xs mb-2 text-center" oninput="convertAscii()">
-                    <div>ASCII: <span id="ascii-out" class="font-bold text-red-400"></span></div>
-                </div>
-
-                <!-- 6. UNICODE Converter -->
-                <div class="bg-black border border-red-700 rounded-lg p-4 flex flex-col justify-center items-center shadow-sm">
-                    <h4 class="font-bold text-red-500">6. UNICODE Converter</h4>
-                </div>
-
-                <!-- 7. Machine Language -->
-                <div class="bg-black border border-red-700 rounded-lg p-4 flex flex-col justify-center items-center shadow-sm">
-                    <h4 class="font-bold text-red-500">7. Machine Language Instructions Converter</h4>
                 </div>
             </div>
-        </section>
+
+            <!-- 2. NOT Gate Simulator -->
+            <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h4 class="font-bold text-base text-white mb-2">NOT Gate Simulator</h4>
+                    <p class="text-xs text-gray-400 mb-4">Inverts the input signal ($0 \rightarrow 1$, $1 \rightarrow 0$).</p>
+                </div>
+                <div class="bg-slate-900 p-4 rounded-lg border border-gray-700 flex items-center justify-around">
+                    <button onclick="toggleNot()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded transition">
+                        Input: <span id="not-in" class="font-mono text-sm ml-1">0</span>
+                    </button>
+                    <span class="text-gray-400 text-lg">→</span>
+                    <div class="text-xs text-gray-300 font-medium">
+                        Output: <span id="not-out" class="font-mono text-base font-bold text-blue-400 ml-1">1</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. AND Gate Simulator -->
+            <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h4 class="font-bold text-base text-white mb-2">AND Gate Simulator</h4>
+                    <p class="text-xs text-gray-400 mb-4">Outputs $1$ only when both Input A and Input B are $1$.</p>
+                </div>
+                <div class="bg-slate-900 p-4 rounded-lg border border-gray-700 flex items-center justify-between gap-2">
+                    <div class="flex gap-2">
+                        <button onclick="toggleAnd('A')" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-3 py-2 rounded transition">
+                            A: <span id="and-a" class="font-mono ml-1">0</span>
+                        </button>
+                        <button onclick="toggleAnd('B')" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-3 py-2 rounded transition">
+                            B: <span id="and-b" class="font-mono ml-1">0</span>
+                        </button>
+                    </div>
+                    <span class="text-gray-400">→</span>
+                    <div class="text-xs text-gray-300 font-medium">
+                        Out: <span id="and-out" class="font-mono text-base font-bold text-blue-400 ml-1">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Binary to Hexadecimal Converter -->
+            <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h4 class="font-bold text-base text-white mb-2">Binary to Hex Converter</h4>
+                    <p class="text-xs text-gray-400 mb-3">Converts binary digits into hexadecimal base-16.</p>
+                </div>
+                <div>
+                    <input 
+                        type="text" 
+                        id="bin-in" 
+                        placeholder="e.g. 1010" 
+                        oninput="convertBinary()" 
+                        class="w-full bg-gray-900 border border-gray-600 rounded px-3 py-2 text-white text-xs mb-3 focus:outline-none focus:border-blue-500"
+                    >
+                    <div class="bg-slate-900 p-3 rounded border border-gray-700 text-xs text-gray-300">
+                        Hex Result: <span id="hex-out" class="font-mono font-bold text-blue-400 ml-1">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. ASCII Converter -->
+            <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h4 class="font-bold text-base text-white mb-2">ASCII Character Converter</h4>
+                    <p class="text-xs text-gray-400 mb-3">Converts text characters into numerical ASCII values.</p>
+                </div>
+                <div>
+                    <input 
+                        type="text" 
+                        id="ascii-in" 
+                        placeholder="Type text..." 
+                        oninput="convertAscii()" 
+                        class="w-full bg-gray-900 border border-gray-600 rounded px-3 py-2 text-white text-xs mb-3 focus:outline-none focus:border-blue-500"
+                    >
+                    <div class="bg-slate-900 p-3 rounded border border-gray-700 text-xs text-gray-300 truncate">
+                        ASCII: <span id="ascii-out" class="font-mono font-bold text-blue-400 ml-1">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Student 1 Overview Card -->
+            <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h4 class="font-bold text-base text-white mb-2">Student 1 Focus</h4>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Demonstrating binary notation conversions, logic gate mechanics, and real-time numerical sequence processing.
+                    </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-700/60 text-right">
+                    <span class="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Lisandro Figueroa</span>
+                </div>
+            </div>
+
+            <!-- 7. Student 2 Overview Card -->
+            <div class="bg-gray-800/90 border border-gray-700 rounded-xl p-6 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h4 class="font-bold text-base text-white mb-2">Student 2 Focus</h4>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Demonstrating Hexadecimal conversions, text encoding representations (ASCII / UNICODE), and database structures.
+                    </p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-gray-700/60 text-right">
+                    <span class="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Group Partner</span>
+                </div>
+            </div>
+
+        </div>
     </main>
 
-    <footer class="bg-black text-red-500 text-center py-4 text-sm mt-auto border-t-2 border-red-700">
-        @ Powered by UB
+    <!-- Footer -->
+    <footer class="bg-black text-white text-center py-4 text-xs mt-auto">
+        Copyright &copy; FoC Group 2 2026.
     </footer>
 
-    <!-- Interactive script just for this page -->
+    <!-- Combined Interactive Logic Script -->
     <script>
-        let notInput = 0;
-        let andInputA = 0;
-        let andInputB = 0;
+        // --- 1. Even & Odd Sum Calculator Logic ---
+        function calculateSums() {
+            let limitInput = document.getElementById('number-limit').value;
+            let n = parseInt(limitInput);
 
-        function toggleNot() {
-            if (notInput == 0) {
-                notInput = 1;
-            } else {
-                notInput = 0;
+            let evenSumResult = document.getElementById('even-sum-result');
+            let oddSumResult = document.getElementById('odd-sum-result');
+            let evenSequence = document.getElementById('even-sequence');
+            let oddSequence = document.getElementById('odd-sequence');
+
+            if (isNaN(n) || n < 1) {
+                evenSumResult.innerText = "0";
+                oddSumResult.innerText = "0";
+                evenSequence.innerText = "-";
+                oddSequence.innerText = "-";
+                return;
             }
-            document.getElementById('not-in').innerText = notInput;
-            
-            if (notInput == 0) {
-                document.getElementById('not-out').innerText = "1";
-            } else {
-                document.getElementById('not-out').innerText = "0";
+
+            let sumEven = 0;
+            let sumOdd = 0;
+            let evenNumbers = [];
+            let oddNumbers = [];
+
+            for (let i = 1; i <= n; i++) {
+                if (i % 2 === 0) {
+                    sumEven += i;
+                    evenNumbers.push(i);
+                } else {
+                    sumOdd += i;
+                    oddNumbers.push(i);
+                }
             }
+
+            evenSumResult.innerText = sumEven;
+            oddSumResult.innerText = sumOdd;
+            evenSequence.innerText = evenNumbers.length > 0 ? evenNumbers.join(' + ') : "-";
+            oddSequence.innerText = oddNumbers.length > 0 ? oddNumbers.join(' + ') : "-";
         }
 
+        // --- 2. NOT Gate Logic ---
+        let notInput = 0;
+        function toggleNot() {
+            notInput = notInput === 0 ? 1 : 0;
+            document.getElementById('not-in').innerText = notInput;
+            document.getElementById('not-out').innerText = notInput === 0 ? "1" : "0";
+        }
+
+        // --- 3. AND Gate Logic ---
+        let andInputA = 0;
+        let andInputB = 0;
         function toggleAnd(gate) {
-            if (gate == 'A') {
-                if (andInputA == 0) andInputA = 1; else andInputA = 0;
+            if (gate === 'A') {
+                andInputA = andInputA === 0 ? 1 : 0;
                 document.getElementById('and-a').innerText = andInputA;
             } else {
-                if (andInputB == 0) andInputB = 1; else andInputB = 0;
+                andInputB = andInputB === 0 ? 1 : 0;
                 document.getElementById('and-b').innerText = andInputB;
             }
             
-            if (andInputA == 1 && andInputB == 1) {
-                document.getElementById('and-out').innerText = "1";
-            } else {
-                document.getElementById('and-out').innerText = "0";
-            }
+            let result = (andInputA === 1 && andInputB === 1) ? "1" : "0";
+            document.getElementById('and-out').innerText = result;
         }
 
+        // --- 4. Binary Converter Logic ---
         function convertBinary() {
-            let input = document.getElementById('bin-in').value;
+            let input = document.getElementById('bin-in').value.trim();
             let outElement = document.getElementById('hex-out');
             
-            if (input == '') {
-                outElement.innerText = '';
+            if (input === '') {
+                outElement.innerText = '-';
             } else if (/^[01]+$/.test(input)) {
                 outElement.innerText = parseInt(input, 2).toString(16).toUpperCase();
             } else {
-                outElement.innerText = 'Invalid';
+                outElement.innerText = 'Invalid Binary';
             }
         }
 
+        // --- 5. ASCII Converter Logic ---
         function convertAscii() {
             let input = document.getElementById('ascii-in').value;
             let outElement = document.getElementById('ascii-out');
             
-            let result = "";
-            for (let i = 0; i < input.length; i++) {
-                result += input.charCodeAt(i) + " ";
+            if (input === '') {
+                outElement.innerText = '-';
+                return;
             }
-            outElement.innerText = result;
+
+            let result = [];
+            for (let i = 0; i < input.length; i++) {
+                result.push(input.charCodeAt(i));
+            }
+            outElement.innerText = result.join(' ');
         }
     </script>
 </body>
