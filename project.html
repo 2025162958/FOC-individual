@@ -3,277 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group 2 - Projects</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Fundamentals of Computing - Project</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .project-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+        }
+        .project-section h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        input {
+            padding: 5px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 5px 15px;
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #16a085;
+        }
+        .output {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-200 min-h-screen flex flex-col font-sans">
-
-    <!-- Header Navigation -->
-    <header class="flex justify-between items-center p-6 bg-black/80 text-white w-full">
-        <div class="text-xl font-bold tracking-widest">GROUP 2</div>
+<body>
+    <header>
+        <h1>Fundamentals of Computing</h1>
         <nav>
-            <ul class="flex space-x-6 text-sm font-medium">
-                <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
-                <li><a href="course.html" class="hover:text-blue-400">Course</a></li>
-                <li><a href="projects.html" class="text-blue-400">Project</a></li>
-                <li><a href="concepts.html" class="hover:text-blue-400">Concept</a></li>
-                <li><a href="database.html" class="hover:text-blue-400">Database</a></li>
-                <li><a href="documentation.html" class="hover:text-blue-400">Documentation</a></li>
-                <li><a href="devteam.html" class="hover:text-blue-400">Dev Team</a></li>
-            </ul>
+            <a href="index.html">Course</a>
+            <a href="project.html" class="active">Project</a>
+            <a href="concepts.html">Concepts</a>
+            <a href="databases.html">Databases</a>
+            <a href="documentation.html">Documentation</a>
+            <a href="about.html">About Me</a>
         </nav>
     </header>
-
-    <!-- Main Content -->
-    <main class="flex-1 py-12 px-6 max-w-7xl mx-auto w-full text-center">
-        <h2 class="text-3xl font-bold mb-2 text-white">Interactive Projects</h2>
-        <p class="mb-10 text-gray-400 text-xs">Explore interactive computing tools, logic gate simulators, and number converters built by Group 2.</p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-
-            <!-- 1. Even & Odd Numbers Sum Calculator -->
-            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-xl col-span-1 md:col-span-2 lg:col-span-3">
-                <div class="flex justify-between items-center mb-4">
-                    <h4 class="font-bold text-lg text-white">Even & Odd Numbers Sum Calculator</h4>
-                    <span class="text-xs bg-slate-900 text-blue-400 px-3 py-1 rounded border border-gray-700 font-mono">Loop Control</span>
-                </div>
-                <p class="text-xs text-gray-400 mb-4">Enter an upper limit ($N$) to calculate and separate the sum sequence of all even and odd numbers from $1$ to $N$.</p>
-                
-                <div class="mb-6">
-                    <label for="number-limit" class="block text-xs font-medium text-gray-300 mb-2">Enter Upper Limit ($N$):</label>
-                    <input 
-                        type="number" 
-                        id="number-limit" 
-                        placeholder="e.g. 10" 
-                        min="1" 
-                        oninput="calculateSums()" 
-                        class="w-full bg-slate-900 border border-gray-700 rounded px-4 py-3 text-white text-xs focus:outline-none focus:border-blue-500 transition"
-                    >
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-slate-900 p-4 rounded border border-gray-700">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="text-xs text-blue-400 font-bold uppercase tracking-wider">Even Sum</span>
-                            <span class="text-[10px] text-gray-400 font-mono">i % 2 == 0</span>
-                        </div>
-                        <div id="even-sum-result" class="text-2xl font-bold text-white mb-1">0</div>
-                        <p class="text-xs text-gray-400 truncate">Sequence: <span id="even-sequence" class="text-gray-300 font-mono">-</span></p>
-                    </div>
-
-                    <div class="bg-slate-900 p-4 rounded border border-gray-700">
-                        <div class="flex justify-between items-center mb-1">
-                            <span class="text-xs text-blue-400 font-bold uppercase tracking-wider">Odd Sum</span>
-                            <span class="text-[10px] text-gray-400 font-mono">i % 2 != 0</span>
-                        </div>
-                        <div id="odd-sum-result" class="text-2xl font-bold text-white mb-1">0</div>
-                        <p class="text-xs text-gray-400 truncate">Sequence: <span id="odd-sequence" class="text-gray-300 font-mono">-</span></p>
-                    </div>
-                </div>
+    <main>
+        <div class="card">
+            <h2>Project</h2>
+            <p>The final project will consist of 4 sections. Each section has a deadline to complete. A complete description of the project can be found on the course moodle site. It will consist of launching a website built with, html, css, and javascript and hosted on github. This site is a benchmark for the Final Project. See Project Specification on Moodle Site.</p>
+            
+            <div class="project-section">
+                <h3>Project 1: NOT Gate</h3>
+                <input type="text" id="p1" placeholder="Enter 1 or 0">
+                <button onclick="runP1()">Submit</button>
+                <p id="out1" class="output"></p>
             </div>
 
-            <!-- 2. NOT Gate Simulator -->
-            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-xl flex flex-col justify-between">
-                <div>
-                    <h4 class="font-bold text-base text-white mb-2">NOT Gate Simulator</h4>
-                    <p class="text-xs text-gray-400 mb-4">Inverts the input signal ($0 \rightarrow 1$, $1 \rightarrow 0$).</p>
-                </div>
-                <div class="bg-slate-900 p-4 rounded border border-gray-700 flex items-center justify-around">
-                    <button onclick="toggleNot()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded transition">
-                        Input: <span id="not-in" class="font-mono text-sm ml-1">0</span>
-                    </button>
-                    <span class="text-gray-400 text-lg">→</span>
-                    <div class="text-xs text-gray-300 font-medium">
-                        Output: <span id="not-out" class="font-mono text-base font-bold text-blue-400 ml-1">1</span>
-                    </div>
-                </div>
+            <div class="project-section">
+                <h3>Project 2: AND Gate</h3>
+                <input type="text" id="p2a" placeholder="Input A (1 or 0)">
+                <input type="text" id="p2b" placeholder="Input B (1 or 0)">
+                <button onclick="runP2()">Submit</button>
+                <p id="out2" class="output"></p>
             </div>
 
-            <!-- 3. AND Gate Simulator -->
-            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-xl flex flex-col justify-between">
-                <div>
-                    <h4 class="font-bold text-base text-white mb-2">AND Gate Simulator</h4>
-                    <p class="text-xs text-gray-400 mb-4">Outputs $1$ only when both Input A and Input B are $1$.</p>
-                </div>
-                <div class="bg-slate-900 p-4 rounded border border-gray-700 flex items-center justify-between gap-2">
-                    <div class="flex gap-2">
-                        <button onclick="toggleAnd('A')" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-3 py-2 rounded transition">
-                            A: <span id="and-a" class="font-mono ml-1">0</span>
-                        </button>
-                        <button onclick="toggleAnd('B')" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-3 py-2 rounded transition">
-                            B: <span id="and-b" class="font-mono ml-1">0</span>
-                        </button>
-                    </div>
-                    <span class="text-gray-400">→</span>
-                    <div class="text-xs text-gray-300 font-medium">
-                        Out: <span id="and-out" class="font-mono text-base font-bold text-blue-400 ml-1">0</span>
-                    </div>
-                </div>
+            <div class="project-section">
+                <h3>Project 3: AND Gate - easy version</h3>
+                <button onclick="runP3(1, 1)">Test 1 AND 1</button>
+                <button onclick="runP3(1, 0)">Test 1 AND 0</button>
+                <button onclick="runP3(0, 0)">Test 0 AND 0</button>
+                <p id="out3" class="output"></p>
             </div>
 
-            <!-- 4. Binary to Hexadecimal Converter -->
-            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-xl flex flex-col justify-between">
-                <div>
-                    <h4 class="font-bold text-base text-white mb-2">Binary to Hex Converter</h4>
-                    <p class="text-xs text-gray-400 mb-3">Converts binary digits into hexadecimal base-16.</p>
-                </div>
-                <div>
-                    <input 
-                        type="text" 
-                        id="bin-in" 
-                        placeholder="e.g. 1010" 
-                        oninput="convertBinary()" 
-                        class="w-full bg-slate-900 border border-gray-700 rounded px-3 py-2 text-white text-xs mb-3 focus:outline-none focus:border-blue-500"
-                    >
-                    <div class="bg-slate-900 p-3 rounded border border-gray-700 text-xs text-gray-300">
-                        Hex Result: <span id="hex-out" class="font-mono font-bold text-blue-400 ml-1">-</span>
-                    </div>
-                </div>
+            <div class="project-section">
+                <h3>Project 4: Binary to Hexadecimal Converter</h3>
+                <input type="text" id="p4" placeholder="Enter binary (e.g. 1010)">
+                <button onclick="runP4()">Convert</button>
+                <p id="out4" class="output"></p>
             </div>
 
-            <!-- 5. ASCII Converter -->
-            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-xl flex flex-col justify-between">
-                <div>
-                    <h4 class="font-bold text-base text-white mb-2">ASCII Character Converter</h4>
-                    <p class="text-xs text-gray-400 mb-3">Converts text characters into numerical ASCII values.</p>
-                </div>
-                <div>
-                    <input 
-                        type="text" 
-                        id="ascii-in" 
-                        placeholder="Type text..." 
-                        oninput="convertAscii()" 
-                        class="w-full bg-slate-900 border border-gray-700 rounded px-3 py-2 text-white text-xs mb-3 focus:outline-none focus:border-blue-500"
-                    >
-                    <div class="bg-slate-900 p-3 rounded border border-gray-700 text-xs text-gray-300 truncate">
-                        ASCII: <span id="ascii-out" class="font-mono font-bold text-blue-400 ml-1">-</span>
-                    </div>
-                </div>
+            <div class="project-section">
+                <h3>Project 5: ASCII Converter</h3>
+                <input type="text" id="p5" placeholder="Enter a character">
+                <button onclick="runP5()">Convert</button>
+                <p id="out5" class="output"></p>
             </div>
 
-            <!-- 6. Student 1 Overview Card -->
-            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-xl flex flex-col justify-between">
-                <div>
-                    <h4 class="font-bold text-base text-white mb-2">Student 1 Focus</h4>
-                    <p class="text-xs text-gray-300 leading-relaxed">
-                        Demonstrating binary notation conversions, logic gate mechanics, and real-time numerical sequence processing.
-                    </p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-gray-700 text-right">
-                    <span class="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Lisandro Figueroa</span>
-                </div>
+            <div class="project-section">
+                <h3>Project 6: UNICODE Converter</h3>
+                <input type="text" id="p6" placeholder="Enter text or emoji">
+                <button onclick="runP6()">Convert</button>
+                <p id="out6" class="output"></p>
             </div>
 
-            <!-- 7. Student 2 Overview Card -->
-            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 shadow-xl flex flex-col justify-between">
-                <div>
-                    <h4 class="font-bold text-base text-white mb-2">Student 2 Focus</h4>
-                    <p class="text-xs text-gray-300 leading-relaxed">
-                        Demonstrating Hexadecimal conversions, text encoding representations (ASCII / UNICODE), and database structures.
-                    </p>
-                </div>
-                <div class="mt-4 pt-3 border-t border-gray-700 text-right">
-                    <span class="text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Group Partner</span>
-                </div>
+            <div class="project-section">
+                <h3>Project 7: Machine Language Instructions Converter</h3>
+                <input type="text" id="p7" placeholder="Enter opcode (e.g. 0001)">
+                <button onclick="runP7()">Decode</button>
+                <p id="out7" class="output"></p>
+            </div>
+
+            <div class="project-section">
+                <h3>Project 8: Sum of Even Numbers</h3>
+                <input type="number" id="p8" placeholder="Enter max number">
+                <button onclick="runP8()">Calculate</button>
+                <p id="out8" class="output"></p>
+            </div>
+
+            <div class="project-section">
+                <h3>Project 9: Sum of Odd Numbers</h3>
+                <input type="number" id="p9" placeholder="Enter max number">
+                <button onclick="runP9()">Calculate</button>
+                <p id="out9" class="output"></p>
+            </div>
+
+            <div class="project-section">
+                <h3>Project 10: Factorial of Numbers</h3>
+                <input type="number" id="p10" placeholder="Enter a number">
+                <button onclick="runP10()">Calculate</button>
+                <p id="out10" class="output"></p>
+            </div>
+
+            <div class="project-section">
+                <h3>Project 11: BMI Calculator</h3>
+                <input type="number" id="w" placeholder="Weight in kg">
+                <input type="number" id="h" placeholder="Height in meters">
+                <button onclick="runP11()">Calculate</button>
+                <p id="out11" class="output"></p>
             </div>
 
         </div>
     </main>
-
-    <!-- Footer -->
-    <footer class="bg-black text-white text-center py-4 text-xs mt-auto">
-        Copyright &copy; FoC Group 2 2026.
+    <footer>
+        <p>&copy; Powered by UB</p>
     </footer>
-
-    <!-- Interactive Logic Script -->
+    <script src="script.js"></script>
     <script>
-        function calculateSums() {
-            let limitInput = document.getElementById('number-limit').value;
-            let n = parseInt(limitInput);
-
-            let evenSumResult = document.getElementById('even-sum-result');
-            let oddSumResult = document.getElementById('odd-sum-result');
-            let evenSequence = document.getElementById('even-sequence');
-            let oddSequence = document.getElementById('odd-sequence');
-
-            if (isNaN(n) || n < 1) {
-                evenSumResult.innerText = "0";
-                oddSumResult.innerText = "0";
-                evenSequence.innerText = "-";
-                oddSequence.innerText = "-";
-                return;
-            }
-
-            let sumEven = 0;
-            let sumOdd = 0;
-            let evenNumbers = [];
-            let oddNumbers = [];
-
-            for (let i = 1; i <= n; i++) {
-                if (i % 2 === 0) {
-                    sumEven += i;
-                    evenNumbers.push(i);
-                } else {
-                    sumOdd += i;
-                    oddNumbers.push(i);
-                }
-            }
-
-            evenSumResult.innerText = sumEven;
-            oddSumResult.innerText = sumOdd;
-            evenSequence.innerText = evenNumbers.length > 0 ? evenNumbers.join(' + ') : "-";
-            oddSequence.innerText = oddNumbers.length > 0 ? oddNumbers.join(' + ') : "-";
-        }
-
-        let notInput = 0;
-        function toggleNot() {
-            notInput = notInput === 0 ? 1 : 0;
-            document.getElementById('not-in').innerText = notInput;
-            document.getElementById('not-out').innerText = notInput === 0 ? "1" : "0";
-        }
-
-        let andInputA = 0;
-        let andInputB = 0;
-        function toggleAnd(gate) {
-            if (gate === 'A') {
-                andInputA = andInputA === 0 ? 1 : 0;
-                document.getElementById('and-a').innerText = andInputA;
+        function runP1() {
+            let val = document.getElementById("p1").value;
+            if (val === "1") {
+                document.getElementById("out1").innerHTML = "Output: 0";
+            } else if (val === "0") {
+                document.getElementById("out1").innerHTML = "Output: 1";
             } else {
-                andInputB = andInputB === 0 ? 1 : 0;
-                document.getElementById('and-b').innerText = andInputB;
+                document.getElementById("out1").innerHTML = "Invalid input";
             }
-            
-            let result = (andInputA === 1 && andInputB === 1) ? "1" : "0";
-            document.getElementById('and-out').innerText = result;
         }
 
-        function convertBinary() {
-            let input = document.getElementById('bin-in').value.trim();
-            let outElement = document.getElementById('hex-out');
-            
-            if (input === '') {
-                outElement.innerText = '-';
-            } else if (/^[01]+$/.test(input)) {
-                outElement.innerText = parseInt(input, 2).toString(16).toUpperCase();
+        function runP2() {
+            let a = document.getElementById("p2a").value;
+            let b = document.getElementById("p2b").value;
+            if (a === "1" && b === "1") {
+                document.getElementById("out2").innerHTML = "Output: 1";
             } else {
-                outElement.innerText = 'Invalid Binary';
+                document.getElementById("out2").innerHTML = "Output: 0";
             }
         }
 
-        function convertAscii() {
-            let input = document.getElementById('ascii-in').value;
-            let outElement = document.getElementById('ascii-out');
-            
-            if (input === '') {
-                outElement.innerText = '-';
-                return;
-            }
+        function runP3(a, b) {
+            let result = a & b;
+            document.getElementById("out3").innerHTML = "Result: " + result;
+        }
 
-            let result = [];
-            for (let i = 0; i < input.length; i++) {
-                result.push(input.charCodeAt(i));
+        function runP4() {
+            let bin = document.getElementById("p4").value;
+            let hex = parseInt(bin, 2).toString(16).toUpperCase();
+            document.getElementById("out4").innerHTML = "Hex: " + hex;
+        }
+
+        function runP5() {
+            let char = document.getElementById("p5").value;
+            let ascii = char.charCodeAt(0);
+            document.getElementById("out5").innerHTML = "ASCII Code: " + ascii;
+        }
+
+        function runP6() {
+            let text = document.getElementById("p6").value;
+            let code = text.codePointAt(0).toString(16).toUpperCase();
+            document.getElementById("out6").innerHTML = "UNICODE: U+" + code;
+        }
+
+        function runP7() {
+            let code = document.getElementById("p7").value;
+            if (code === "0000") document.getElementById("out7").innerHTML = "Instruction: HALT";
+            else if (code === "0001") document.getElementById("out7").innerHTML = "Instruction: LOAD";
+            else if (code === "0010") document.getElementById("out7").innerHTML = "Instruction: STORE";
+            else if (code === "0011") document.getElementById("out7").innerHTML = "Instruction: ADD";
+            else document.getElementById("out7").innerHTML = "Instruction: UNKNOWN";
+        }
+
+        function runP8() {
+            let max = parseInt(document.getElementById("p8").value);
+            let sum = 0;
+            for (let i = 2; i <= max; i = i + 2) {
+                sum = sum + i;
             }
-            outElement.innerText = result.join(' ');
+            document.getElementById("out8").innerHTML = "Sum: " + sum;
+        }
+
+        function runP9() {
+            let max = parseInt(document.getElementById("p9").value);
+            let sum = 0;
+            for (let i = 1; i <= max; i = i + 2) {
+                sum = sum + i;
+            }
+            document.getElementById("out9").innerHTML = "Sum: " + sum;
+        }
+
+        function runP10() {
+            let num = parseInt(document.getElementById("p10").value);
+            let fact = 1;
+            for (let i = 1; i <= num; i++) {
+                fact = fact * i;
+            }
+            document.getElementById("out10").innerHTML = "Factorial: " + fact;
+        }
+
+        function runP11() {
+            let w = parseFloat(document.getElementById("w").value);
+            let h = parseFloat(document.getElementById("h").value);
+            let bmi = w / (h * h);
+            document.getElementById("out11").innerHTML = "Your BMI: " + bmi.toFixed(2);
         }
     </script>
 </body>
